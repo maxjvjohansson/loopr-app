@@ -9,7 +9,7 @@ export default function HomeScreen() {
       <Text style={styles.subTitle}>Din personliga digitala caddie</Text>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.replace("/_app")}
+        onPress={() => router.replace("/(tabs)/")}
       >
         <Text style={styles.buttonText}>Kom igång</Text>
       </TouchableOpacity>
