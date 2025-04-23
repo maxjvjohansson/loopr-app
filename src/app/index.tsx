@@ -9,7 +9,7 @@ export default function HomeScreen() {
       <Text style={styles.subTitle}>Din personliga digitala caddie</Text>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.replace("/hole")}
+        onPress={() => router.replace("/_app")}
       >
         <Text style={styles.buttonText}>Kom igång</Text>
       </TouchableOpacity>
@@ -38,13 +38,13 @@ const styles = StyleSheet.create({
     color: "#ffffff",
   },
   button: {
-    backgroundColor: "#2f7dc5",
+    backgroundColor: "#ffffff",
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 10,
   },
   buttonText: {
-    color: "#ffffff",
+    color: "#2fc586",
     fontSize: 16,
     fontWeight: "600",
   },

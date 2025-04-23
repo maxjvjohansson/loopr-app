@@ -2,6 +2,7 @@
   "expo": {
     "name": "loopr-app",
     "slug": "loopr-app",
+    "scheme": "loopr",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "",
