@@ -1,10 +1,11 @@
 import { useRouter } from "expo-router";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function DashboardPage() {
   const router = useRouter();
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>
         Välkommen tillbaka till Loopr Max, redo för nästa runda?
       </Text>
@@ -14,12 +15,6 @@ export default function DashboardPage() {
       >
         <Text style={styles.primaryButtonText}>Starta ny runda</Text>
       </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.secondaryButton}
-        onPress={() => router.replace("/(tabs)/profile")}
-      >
-        <Text style={styles.secondaryButtonText}>Se statistik</Text>
-      </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.secondaryButton}
@@ -27,14 +22,7 @@ export default function DashboardPage() {
       >
         <Text style={styles.secondaryButtonText}>Kolla din bag</Text>
       </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.secondaryButton}
-        onPress={() => router.replace("/")}
-      >
-        <Text style={styles.secondaryButtonText}>Fortsätt runda</Text>
-      </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -42,7 +30,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     padding: 24,
     backgroundColor: "#ffffff",
   },

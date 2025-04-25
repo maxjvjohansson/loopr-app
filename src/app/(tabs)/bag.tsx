@@ -1,9 +1,10 @@
 import { View, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function BagPage() {
   return (
-    <View>
+    <SafeAreaView>
       <Text>Min golfbag</Text>
-    </View>
+    </SafeAreaView>
   );
 }
