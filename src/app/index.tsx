@@ -1,10 +1,11 @@
 import { useRouter } from "expo-router";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   const router = useRouter();
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Loopr</Text>
       <Text style={styles.subTitle}>Din personliga digitala caddie</Text>
       <TouchableOpacity
@@ -13,7 +14,7 @@ export default function HomeScreen() {
       >
         <Text style={styles.buttonText}>Kom igång</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }
 
