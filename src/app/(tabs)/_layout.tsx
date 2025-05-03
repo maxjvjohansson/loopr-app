@@ -14,11 +14,11 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="search"
+        name="play"
         options={{
-          title: "Sök",
+          title: "Spela",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search-outline" size={size} color={color} />
+            <Ionicons name="golf-outline" size={size} color={color} />
           ),
         }}
       />
