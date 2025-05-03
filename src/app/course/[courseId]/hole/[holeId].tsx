@@ -1,10 +1,7 @@
 import MapView, { Marker } from "react-native-maps";
 import { View, StyleSheet } from "react-native";
-import { useLocalSearchParams } from "expo-router";
 
 export default function CoursePage() {
-  const { id } = useLocalSearchParams();
-
   const tee = { latitude: 57.94176901908634, longitude: 12.031278555480554 };
   const green = { latitude: 57.94077458061409, longitude: 12.03264098100342 };
 
