@@ -1,12 +1,22 @@
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import MapView from "react-native-maps";
-import { useRef, useEffect } from "react";
-import holes from "@lib/mock-data/holes.json";
+import { useRef, useEffect, useLayoutEffect } from "react";
+import holesData from "@lib/mock-data/holes.json";
+import { useNavigation } from "expo-router";
 
 export default function HoleMap() {
   const mapRef = useRef<MapView>(null);
-  const hole = holes.find((h) => h.id === 1);
+  const navigation = useNavigation();
+  const course = holesData.course;
+  const club = holesData.club;
+  const hole = holesData.holes.find((h) => h.id === 1);
   if (!hole) return null;
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitle: `${club} · ${course}`,
+    });
+  }, [navigation]);
 
   const { tee, green } = hole.coordinates;
 

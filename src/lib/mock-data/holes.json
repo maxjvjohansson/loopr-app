@@ -1,34 +1,38 @@
-[
-  {
-    "id": 1,
-    "par": 3,
-    "index": 14,
-    "tees": {
-      "60": 141,
-      "55": 131,
-      "50": 122,
-      "45": 110,
-      "40": 110
+{
+  "club": "Lysegården",
+  "course": "18-hålsbanan",
+  "holes": [
+    {
+      "id": 1,
+      "par": 3,
+      "index": 14,
+      "tees": {
+        "60": 141,
+        "55": 131,
+        "50": 122,
+        "45": 110,
+        "40": 110
+      },
+      "coordinates": {
+        "tee": { "latitude": 57.941769, "longitude": 12.031278 },
+        "green": { "latitude": 57.940774, "longitude": 12.032641 }
+      }
     },
-    "coordinates": {
-      "tee": { "latitude": 57.941769, "longitude": 12.031278 },
-      "green": { "latitude": 57.940774, "longitude": 12.032641 }
+    {
+      "id": 2,
+      "par": 4,
+      "index": 2,
+      "tees": {
+        "60": 326,
+        "55": 317,
+        "50": 302,
+        "45": 269,
+        "40": 269
+      },
+      "coordinates": {
+        "tee": { "latitude": 57.940679, "longitude": 12.03331 },
+        "green": { "latitude": 57.938154, "longitude": 12.030799 }
+      }
     }
-  },
-  {
-    "id": 2,
-    "par": 4,
-    "index": 2,
-    "tees": {
-      "60": 326,
-      "55": 317,
-      "50": 302,
-      "45": 269,
-      "40": 269
-    },
-    "coordinates": {
-      "tee": { "latitude": 57.940679, "longitude": 12.03331 },
-      "green": { "latitude": 57.938154, "longitude": 12.030799 }
-    }
-  }
-]
+  ]
+}
