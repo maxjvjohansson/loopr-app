@@ -4,13 +4,13 @@ import { View, StyleSheet } from "react-native";
 
 export default function HoleMap({ hole }: { hole: any }) {
   const mapRef = useRef<MapView>(null);
-  const { tee, green } = hole.coordinates;
+  const { tee, ["green-center"]: greenCenter } = hole.coordinates;
 
-  const heading = getHeading(tee, green);
+  const heading = getHeading(tee, greenCenter);
 
   useEffect(() => {
     if (!mapRef.current) return;
-    mapRef.current.fitToCoordinates([tee, green], {
+    mapRef.current.fitToCoordinates([tee, greenCenter], {
       edgePadding: { top: 100, bottom: 100, left: 50, right: 50 },
       animated: true,
     });
@@ -29,14 +29,18 @@ export default function HoleMap({ hole }: { hole: any }) {
         pitchEnabled={false}
         rotateEnabled={false}
         initialRegion={{
-          latitude: (tee.latitude + green.latitude) / 2,
-          longitude: (tee.longitude + green.longitude) / 2,
+          latitude: (tee.latitude + greenCenter.latitude) / 2,
+          longitude: (tee.longitude + greenCenter.longitude) / 2,
           latitudeDelta: 0.001,
           longitudeDelta: 0.001,
         }}
       >
-        <Marker coordinate={tee} pinColor="green" />
-        <Marker coordinate={green} pinColor="red" />
+        <Marker coordinate={tee} pinColor="green" title="Tee" />
+        <Marker
+          coordinate={greenCenter}
+          pinColor="red"
+          title="Green (center)"
+        />
       </MapView>
     </View>
   );
