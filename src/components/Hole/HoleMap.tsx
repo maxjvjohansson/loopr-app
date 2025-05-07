@@ -11,7 +11,7 @@ export default function HoleMap({ hole }: { hole: any }) {
   useEffect(() => {
     if (!mapRef.current) return;
     mapRef.current.fitToCoordinates([tee, greenCenter], {
-      edgePadding: { top: 100, bottom: 100, left: 50, right: 50 },
+      edgePadding: { top: 80, bottom: 80, left: 40, right: 40 },
       animated: true,
     });
     mapRef.current.animateCamera({ heading, pitch: 0 }, { duration: 1000 });
@@ -56,7 +56,7 @@ function getHeading(from: any, to: any) {
 const styles = StyleSheet.create({
   mapWrapper: {
     width: "80%",
-    aspectRatio: 0.65,
+    aspectRatio: 0.7,
     borderRadius: 150,
     overflow: "hidden",
     marginBottom: 32,
