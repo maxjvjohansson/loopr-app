@@ -19,6 +19,60 @@
         "green-center": { "latitude": 57.940778, "longitude": 12.032647 },
         "green-back": { "latitude": 57.940706, "longitude": 12.032796 }
       }
+    },
+    {
+      "id": 2,
+      "par": 4,
+      "index": 2,
+      "tees": {
+        "60": 326,
+        "55": 317,
+        "50": 302,
+        "45": 269,
+        "40": 269
+      },
+      "coordinates": {
+        "tee": { "latitude": 57.940693, "longitude": 12.03335 },
+        "green-front": { "latitude": 57.938268, "longitude": 12.030916 },
+        "green-center": { "latitude": 57.938165, "longitude": 12.030813 },
+        "green-back": { "latitude": 57.938065, "longitude": 12.030724 }
+      }
+    },
+    {
+      "id": 3,
+      "par": 4,
+      "index": 6,
+      "tees": {
+        "60": 318,
+        "55": 305,
+        "50": 269,
+        "45": 236,
+        "40": 236
+      },
+      "coordinates": {
+        "tee": { "latitude": 57.93853, "longitude": 12.032269 },
+        "green-front": { "latitude": 57.940372, "longitude": 12.034631 },
+        "green-center": { "latitude": 57.940416, "longitude": 12.034796 },
+        "green-back": { "latitude": 57.940458, "longitude": 12.03491 }
+      }
+    },
+    {
+      "id": 4,
+      "par": 3,
+      "index": 18,
+      "tees": {
+        "60": 138,
+        "55": 131,
+        "50": 124,
+        "45": 112,
+        "40": 112
+      },
+      "coordinates": {
+        "tee": { "latitude": 57.940799, "longitude": 12.03555 },
+        "green-front": { "latitude": 57.941712, "longitude": 12.03488 },
+        "green-center": { "latitude": 57.941855, "longitude": 12.034826 },
+        "green-back": { "latitude": 57.941987, "longitude": 12.034835 }
+      }
     }
   ]
 }
