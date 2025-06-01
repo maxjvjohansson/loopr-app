@@ -1,7 +1,9 @@
 import { useRef, useEffect } from "react";
 import MapView, { Marker } from "react-native-maps";
 import { View, StyleSheet } from "react-native";
-import { Svg, Defs, RadialGradient, Rect, Stop, Mask } from "react-native-svg";
+import { Svg, Defs, RadialGradient, Rect, Stop } from "react-native-svg";
+import bbox from "@turf/bbox";
+import { feature } from "@turf/helpers";
 
 export default function HoleMap({ hole }: { hole: any }) {
   const mapRef = useRef<MapView>(null);
@@ -9,12 +11,24 @@ export default function HoleMap({ hole }: { hole: any }) {
 
   const heading = getHeading(tee, greenCenter);
 
+  const turfPolygon = feature(hole.geometry);
+
   useEffect(() => {
     if (!mapRef.current) return;
-    mapRef.current.fitToCoordinates([tee, greenCenter], {
-      edgePadding: { top: 80, bottom: 80, left: 40, right: 40 },
-      animated: true,
-    });
+
+    const [minLng, minLat, maxLng, maxLat] = bbox(turfPolygon);
+
+    mapRef.current.fitToCoordinates(
+      [
+        { latitude: minLat, longitude: minLng },
+        { latitude: maxLat, longitude: maxLng },
+      ],
+      {
+        edgePadding: { top: 20, bottom: 40, left: 5, right: 5 },
+        animated: true,
+      }
+    );
+
     mapRef.current.animateCamera({ heading, pitch: 0 }, { duration: 1000 });
   }, []);
 
@@ -29,12 +43,6 @@ export default function HoleMap({ hole }: { hole: any }) {
         scrollEnabled
         pitchEnabled={false}
         rotateEnabled={false}
-        initialRegion={{
-          latitude: (tee.latitude + greenCenter.latitude) / 2,
-          longitude: (tee.longitude + greenCenter.longitude) / 2,
-          latitudeDelta: 0.001,
-          longitudeDelta: 0.001,
-        }}
       >
         <Marker
           coordinate={greenCenter}
@@ -42,6 +50,8 @@ export default function HoleMap({ hole }: { hole: any }) {
           title="Green (center)"
         />
       </MapView>
+
+      {/* Fade Overlay */}
       <Svg style={StyleSheet.absoluteFill}>
         <Defs>
           <RadialGradient
@@ -74,9 +84,8 @@ const styles = StyleSheet.create({
   mapWrapper: {
     width: "80%",
     aspectRatio: 0.8,
-    borderRadius: 150,
     overflow: "hidden",
-    marginBottom: 48,
+    marginBottom: 32,
   },
   map: {
     ...StyleSheet.absoluteFillObject,
