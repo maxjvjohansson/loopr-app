@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import MapView, { Marker } from "react-native-maps";
 import { View, StyleSheet } from "react-native";
+import { Svg, Defs, RadialGradient, Rect, Stop, Mask } from "react-native-svg";
 
 export default function HoleMap({ hole }: { hole: any }) {
   const mapRef = useRef<MapView>(null);
@@ -35,13 +36,29 @@ export default function HoleMap({ hole }: { hole: any }) {
           longitudeDelta: 0.001,
         }}
       >
-        <Marker coordinate={tee} pinColor="green" title="Tee" />
         <Marker
           coordinate={greenCenter}
-          pinColor="red"
+          pinColor="green"
           title="Green (center)"
         />
       </MapView>
+      <Svg style={StyleSheet.absoluteFill}>
+        <Defs>
+          <RadialGradient
+            id="fade"
+            cx="50%"
+            cy="50%"
+            rx="50%"
+            ry="50%"
+            fx="50%"
+            fy="50%"
+          >
+            <Stop offset="90%" stopColor="white" stopOpacity="0" />
+            <Stop offset="100%" stopColor="white" stopOpacity="1" />
+          </RadialGradient>
+        </Defs>
+        <Rect width="100%" height="100%" fill="url(#fade)" />
+      </Svg>
     </View>
   );
 }
@@ -56,10 +73,10 @@ function getHeading(from: any, to: any) {
 const styles = StyleSheet.create({
   mapWrapper: {
     width: "80%",
-    aspectRatio: 0.7,
+    aspectRatio: 0.8,
     borderRadius: 150,
     overflow: "hidden",
-    marginBottom: 32,
+    marginBottom: 48,
   },
   map: {
     ...StyleSheet.absoluteFillObject,
