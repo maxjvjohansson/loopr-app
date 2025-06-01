@@ -14,10 +14,34 @@
         "40": 110
       },
       "coordinates": {
-        "tee": { "latitude": 57.941769, "longitude": 12.031278 },
-        "green-front": { "latitude": 57.940861, "longitude": 12.032461 },
-        "green-center": { "latitude": 57.940778, "longitude": 12.032647 },
-        "green-back": { "latitude": 57.940706, "longitude": 12.032796 }
+        "tee": {
+          "latitude": 57.941769,
+          "longitude": 12.031278
+        },
+        "green-front": {
+          "latitude": 57.940861,
+          "longitude": 12.032461
+        },
+        "green-center": {
+          "latitude": 57.940778,
+          "longitude": 12.032647
+        },
+        "green-back": {
+          "latitude": 57.940706,
+          "longitude": 12.032796
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [12.031316, 57.94192],
+            [12.033325, 57.940851],
+            [12.032511, 57.940546],
+            [12.031015, 57.941827],
+            [12.031316, 57.94192]
+          ]
+        ]
       }
     },
     {
@@ -32,10 +56,36 @@
         "40": 269
       },
       "coordinates": {
-        "tee": { "latitude": 57.940693, "longitude": 12.03335 },
-        "green-front": { "latitude": 57.938268, "longitude": 12.030916 },
-        "green-center": { "latitude": 57.938165, "longitude": 12.030813 },
-        "green-back": { "latitude": 57.938065, "longitude": 12.030724 }
+        "tee": {
+          "latitude": 57.940693,
+          "longitude": 12.03335
+        },
+        "green-front": {
+          "latitude": 57.938268,
+          "longitude": 12.030916
+        },
+        "green-center": {
+          "latitude": 57.938165,
+          "longitude": 12.030813
+        },
+        "green-back": {
+          "latitude": 57.938065,
+          "longitude": 12.030724
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [12.031, 57.9419],
+            [12.0313, 57.9415],
+            [12.0325, 57.941],
+            [12.0328, 57.9407],
+            [12.0326, 57.9405],
+            [12.0311, 57.9406],
+            [12.031, 57.9419]
+          ]
+        ]
       }
     },
     {
@@ -50,10 +100,36 @@
         "40": 236
       },
       "coordinates": {
-        "tee": { "latitude": 57.93853, "longitude": 12.032269 },
-        "green-front": { "latitude": 57.940372, "longitude": 12.034631 },
-        "green-center": { "latitude": 57.940416, "longitude": 12.034796 },
-        "green-back": { "latitude": 57.940458, "longitude": 12.03491 }
+        "tee": {
+          "latitude": 57.93853,
+          "longitude": 12.032269
+        },
+        "green-front": {
+          "latitude": 57.940372,
+          "longitude": 12.034631
+        },
+        "green-center": {
+          "latitude": 57.940416,
+          "longitude": 12.034796
+        },
+        "green-back": {
+          "latitude": 57.940458,
+          "longitude": 12.03491
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [12.031, 57.9419],
+            [12.0313, 57.9415],
+            [12.0325, 57.941],
+            [12.0328, 57.9407],
+            [12.0326, 57.9405],
+            [12.0311, 57.9406],
+            [12.031, 57.9419]
+          ]
+        ]
       }
     },
     {
@@ -68,10 +144,80 @@
         "40": 112
       },
       "coordinates": {
-        "tee": { "latitude": 57.940799, "longitude": 12.03555 },
-        "green-front": { "latitude": 57.941712, "longitude": 12.03488 },
-        "green-center": { "latitude": 57.941855, "longitude": 12.034826 },
-        "green-back": { "latitude": 57.941987, "longitude": 12.034835 }
+        "tee": {
+          "latitude": 57.940799,
+          "longitude": 12.03555
+        },
+        "green-front": {
+          "latitude": 57.941712,
+          "longitude": 12.03488
+        },
+        "green-center": {
+          "latitude": 57.941855,
+          "longitude": 12.034826
+        },
+        "green-back": {
+          "latitude": 57.941987,
+          "longitude": 12.034835
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [12.031, 57.9419],
+            [12.0313, 57.9415],
+            [12.0325, 57.941],
+            [12.0328, 57.9407],
+            [12.0326, 57.9405],
+            [12.0311, 57.9406],
+            [12.031, 57.9419]
+          ]
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "par": 5,
+      "index": 12,
+      "tees": {
+        "60": 537,
+        "55": 475,
+        "50": 421,
+        "45": 421,
+        "40": 370
+      },
+      "coordinates": {
+        "tee": {
+          "latitude": 57.941993,
+          "longitude": 12.031656
+        },
+        "green-front": {
+          "latitude": 57.944464,
+          "longitude": 12.038974
+        },
+        "green-center": {
+          "latitude": 57.94456,
+          "longitude": 12.039116
+        },
+        "green-back": {
+          "latitude": 57.944643,
+          "longitude": 12.039216
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [12.031, 57.9419],
+            [12.0313, 57.9415],
+            [12.0325, 57.941],
+            [12.0328, 57.9407],
+            [12.0326, 57.9405],
+            [12.0311, 57.9406],
+            [12.031, 57.9419]
+          ]
+        ]
       }
     }
   ]
