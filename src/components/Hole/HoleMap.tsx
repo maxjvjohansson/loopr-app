@@ -1,7 +1,6 @@
 import { useRef, useEffect } from "react";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import { View, StyleSheet } from "react-native";
-import Feather from "@expo/vector-icons/Feather";
 
 export default function HoleMap({ hole }: { hole: any }) {
   const mapRef = useRef<MapView>(null);
