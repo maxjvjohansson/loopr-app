@@ -1,9 +1,6 @@
 import { useRef, useEffect } from "react";
 import MapView, { Marker } from "react-native-maps";
 import { View, StyleSheet } from "react-native";
-import { Svg, Defs, RadialGradient, Rect, Stop } from "react-native-svg";
-import bbox from "@turf/bbox";
-import { feature } from "@turf/helpers";
 
 export default function HoleMap({ hole }: { hole: any }) {
   const mapRef = useRef<MapView>(null);
@@ -11,23 +8,13 @@ export default function HoleMap({ hole }: { hole: any }) {
 
   const heading = getHeading(tee, greenCenter);
 
-  const turfPolygon = feature(hole.geometry);
-
   useEffect(() => {
     if (!mapRef.current) return;
 
-    const [minLng, minLat, maxLng, maxLat] = bbox(turfPolygon);
-
-    mapRef.current.fitToCoordinates(
-      [
-        { latitude: minLat, longitude: minLng },
-        { latitude: maxLat, longitude: maxLng },
-      ],
-      {
-        edgePadding: { top: 20, bottom: 40, left: 5, right: 5 },
-        animated: true,
-      }
-    );
+    mapRef.current.fitToCoordinates([tee, greenCenter], {
+      edgePadding: { top: 80, bottom: 80, left: 10, right: 10 },
+      animated: true,
+    });
 
     mapRef.current.animateCamera({ heading, pitch: 0 }, { duration: 1000 });
   }, []);
@@ -43,6 +30,12 @@ export default function HoleMap({ hole }: { hole: any }) {
         scrollEnabled
         pitchEnabled={false}
         rotateEnabled={false}
+        initialRegion={{
+          latitude: (tee.latitude + greenCenter.latitude) / 2,
+          longitude: (tee.longitude + greenCenter.longitude) / 2,
+          latitudeDelta: 0.001,
+          longitudeDelta: 0.001,
+        }}
       >
         <Marker
           coordinate={greenCenter}
@@ -50,25 +43,6 @@ export default function HoleMap({ hole }: { hole: any }) {
           title="Green (center)"
         />
       </MapView>
-
-      {/* Fade Overlay */}
-      <Svg style={StyleSheet.absoluteFill}>
-        <Defs>
-          <RadialGradient
-            id="fade"
-            cx="50%"
-            cy="50%"
-            rx="50%"
-            ry="50%"
-            fx="50%"
-            fy="50%"
-          >
-            <Stop offset="90%" stopColor="white" stopOpacity="0" />
-            <Stop offset="100%" stopColor="white" stopOpacity="1" />
-          </RadialGradient>
-        </Defs>
-        <Rect width="100%" height="100%" fill="url(#fade)" />
-      </Svg>
     </View>
   );
 }
@@ -83,9 +57,10 @@ function getHeading(from: any, to: any) {
 const styles = StyleSheet.create({
   mapWrapper: {
     width: "80%",
-    aspectRatio: 0.8,
+    aspectRatio: 0.7,
+    borderRadius: 16,
     overflow: "hidden",
-    marginBottom: 32,
+    marginBottom: 16,
   },
   map: {
     ...StyleSheet.absoluteFillObject,
