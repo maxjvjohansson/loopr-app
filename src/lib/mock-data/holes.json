@@ -29,7 +29,11 @@
         "green-back": {
           "latitude": 57.940706,
           "longitude": 12.032796
-        }
+        },
+        "fairway": [
+          { "latitude": 57.941551, "longitude": 12.031577 },
+          { "latitude": 57.940878, "longitude": 12.032486 }
+        ]
       }
     },
     {
@@ -59,7 +63,12 @@
         "green-back": {
           "latitude": 57.938065,
           "longitude": 12.030724
-        }
+        },
+        "fairway": [
+          { "latitude": 57.939944, "longitude": 12.032632 },
+          { "latitude": 57.938903, "longitude": 12.031816 },
+          { "latitude": 57.938279, "longitude": 12.030968 }
+        ]
       }
     },
     {
@@ -89,7 +98,12 @@
         "green-back": {
           "latitude": 57.940458,
           "longitude": 12.03491
-        }
+        },
+        "fairway": [
+          { "latitude": 57.939032, "longitude": 12.032602 },
+          { "latitude": 57.940023, "longitude": 12.033249 },
+          { "latitude": 57.940383, "longitude": 12.034609 }
+        ]
       }
     },
     {
@@ -119,7 +133,11 @@
         "green-back": {
           "latitude": 57.941987,
           "longitude": 12.034835
-        }
+        },
+        "fairway": [
+          { "latitude": 57.940881, "longitude": 12.035386 },
+          { "latitude": 57.941698, "longitude": 12.034933 }
+        ]
       }
     },
     {
@@ -149,7 +167,12 @@
         "green-back": {
           "latitude": 57.944643,
           "longitude": 12.039216
-        }
+        },
+        "fairway": [
+          { "latitude": 57.942248, "longitude": 12.032621 },
+          { "latitude": 57.943271, "longitude": 12.036296 },
+          { "latitude": 57.944452, "longitude": 12.038915 }
+        ]
       }
     }
   ]

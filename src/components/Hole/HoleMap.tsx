@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker, Polyline } from "react-native-maps";
 import { View, StyleSheet } from "react-native";
+import Feather from "@expo/vector-icons/Feather";
 
 export default function HoleMap({ hole }: { hole: any }) {
   const mapRef = useRef<MapView>(null);
@@ -37,10 +38,17 @@ export default function HoleMap({ hole }: { hole: any }) {
           longitudeDelta: 0.001,
         }}
       >
+        {hole.coordinates.fairway && (
+          <Polyline
+            coordinates={hole.coordinates.fairway}
+            strokeColor="white"
+            lineDashPattern={[4, 6]}
+          />
+        )}
         <Marker
           coordinate={greenCenter}
-          pinColor="green"
           title="Green (center)"
+          pinColor="red"
         />
       </MapView>
     </View>
